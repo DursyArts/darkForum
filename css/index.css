@@ -1,0 +1,57 @@
+::selection{
+    background-color: lime;
+    color: black;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: lime;
+    font-family: Courier, serif;
+}
+
+.nav{
+    position: absolute;
+    top: 0;
+    border-bottom: 1px solid lime;
+    height: 3em;
+    width: 100%;
+    overflow: hidden;
+}
+
+.nav-content{
+    position: absolute;
+    width: 100%;
+}
+.nav-content p{
+    position: relative;
+    text-align: center;
+}
+
+.nav-links{
+    position: absolute;
+    left: 1em;
+    top: 1em;
+}
+
+.forum-posts{
+    position: absolute;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 4em;
+    bottom: 2em;
+}
+table{
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1em;
+    overflow: scroll;
+}
+
+td{
+    border: 1px solid lime;
+}

@@ -1,0 +1,43 @@
+::selection{
+    background-color: lime;
+    color: black;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: lime;
+    font-family: Courier, serif;
+}
+
+.login-form{
+    position: relative;
+    height: auto;
+    width: fit-content;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+}
+.register-form{
+    position: relative;
+    height: auto;
+    width: fit-content;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+}
+
+input{
+    background-color: black;
+    color: lime;
+    font-family: Courier, serif;
+    border:1px lime solid;
+    outline: none;
+}
+
+input:focus{
+    box-shadow: 0 0 5px lime;
+}

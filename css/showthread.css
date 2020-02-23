@@ -1,0 +1,101 @@
+::selection{
+    background-color: lime;
+    color: black;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: lime;
+    font-family: Courier, serif;
+}
+
+.nav{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    border-bottom: 1px solid lime;
+    height: 3em;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.nav-content{
+    width: 100%;
+    left: 50%;
+}
+
+.nav-content a{
+    position: relative;
+    top: 1em;
+}
+
+.thread-owner{
+    order: 0;
+    border-right: 1px solid lime;
+    text-align: center;
+    padding: 1em;
+}
+
+.thread-content{
+    order: 1;
+    flex-grow: 10;
+    overflow: hidden;
+    padding-left: 4em;
+}
+
+.thread-content textarea{
+    background-color: black;
+    color: lime;
+    border: none;
+    resize: none;
+    width: 99%;
+    height: 40em;
+    right: 1em;
+    outline: none;
+}
+
+.thread{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    position: absolute;
+    width: 98vw;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 4em;
+    height: fit-content;
+    border: 1px solid lime;
+
+}
+
+.comment-wrapper{
+    position: relative;
+    margin-top: 40em;
+
+}
+
+
+.comments table{
+    width: 100%;
+}
+
+.comments td{
+    border: 1px solid lime;
+    text-align: center;
+}
+
+input{
+    background-color: black;
+    color: lime;
+    font-family: Courier, serif;
+    border:1px lime solid;
+    outline: none;
+}
+
+input:focus{
+    box-shadow: 0 0 5px lime;
+}
