@@ -8,10 +8,30 @@ include("db.php");
     <link rel="stylesheet" href="css/index.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
+<script>
+    window.onload = function() {
+        page(0);
+    };
+
+    function page(page) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById("ajaxTable").innerHTML =
+                    this.responseText;
+            }
+        };
+        xhttp.open("GET", "/phpForum/get_threads.php?page="+page, true);
+        xhttp.send();
+
+        document.getElementById("pagination-active").innerHTML = "page"+page+" :";
+    }
+</script>
 <body>
 <div class="nav">
-    <div class="nav-content">
-        <p>dark forum v1</p>
+        <div class="nav-logo">
+            <h3>dark forum v1</h3>
+        </div>
         <div class="nav-links">
             <?php
             if(isset($_SESSION["sessionname"])){
@@ -26,30 +46,37 @@ include("db.php");
 
             <a href="user.php">user</a>
             <a href="create.php">create</a>
+            <a href="/phpForum/crypter.php">crypter</a>
         </div>
-    </div>
+        <div class="nav-spacer"></div>
 </div>
 <div class="forum-posts">
-    <table>
-        <tr>
-            <th width="30px">ID</th>
-            <th>title</th>
-            <th width="100px">owner</th>
-            <th width="200px">date</th>
-        </tr>
-        <?php
+    <table id="ajaxTable">
+        <!-- Gets filled by JS Ajax request from get_threads.php?page=x -->
+    </table>
+    <div class="pagination_id" >
+        <p id="pagination-active" style="display: inline;">page:</p>
+            <?php
         $query = mysqli_query($CON, "SELECT * FROM threads");
-        while($row = mysqli_fetch_assoc($query)){
-            $id = $row["ID"];
-            $owner = $row["owner"];
-            $title = $row["title"];
-            $date = $row["date"];
-            echo "<tr><td>".$id."</td>"."<td><a href='/phpForum/showthread.php?id=".$id."'>".$title."</a></td>"."<td>".$owner."</td><td>".$date."</td></tr>";
-        }
+        $num = mysqli_num_rows($query);
+        $limit = 10;
+        $pages = ceil($num/$limit);
+        $pages--;
 
+        for($i=0;$i<=$pages;$i++){
+            echo "<a href='#' id='pagination' onclick='page($i)'>$i</a>";
+        }
         ?>
 
-    </table>
+    </div>
+
+</div>
+<div class="marquee">
+    <marquee direction="down" width="100%" height="100%" behavior="alternate" style="color: lime;">
+        <marquee behavior="alternate" >
+            Under<br>Construction!
+        </marquee>
+    </marquee>
 </div>
 </body>
 </html>
