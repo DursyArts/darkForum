@@ -52,6 +52,7 @@ if(isset($_POST["login"])){
             </tr>
         </table>
     </form>
+    <a href="index.php">back to index</a>
 </div>
 </body>
 </html>

@@ -10,6 +10,7 @@ $query = mysqli_query($CON, "SELECT * FROM threads WHERE ID = '$thread_id'");
 $row = mysqli_fetch_assoc($query);
 $id = $row["ID"];
 $owner = $row["owner"];
+$owner = "<a href='/phpForum/user.php?name=$owner'>$owner</a>";
 $title = $row["title"];
 $date = $row["date"];
 $content = $row["content"];
@@ -85,10 +86,11 @@ $content = strip_tags($content);
             do{
                 $comment_id = $row["ID"];
                 $owner = $row["owner"];
+                $owner = "<a href='/phpForum/user.php?name=$owner'>$owner</a>";
                 $date = $row["date"];
                 $content = $row["content"];
 
-                echo "<tr><td>$comment_id</td><td>$content</td><td>$date</td><td>$owner</td></tr>";
+                echo "<tr><td>$comment_id</td><td width='70%'>$content</td><td>$date</td><td>$owner</td></tr>";
             }while($row = mysqli_fetch_assoc($query));
             echo "</table>";
             ?>

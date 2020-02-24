@@ -45,7 +45,9 @@ if(isset($_POST["register"])){
 ?>
 <html lang="en">
 <head>
-
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body>
 <div class="register-form">
@@ -65,6 +67,7 @@ if(isset($_POST["register"])){
             </tr>
         </table>
     </form>
+    <a href="index.php">back to index</a>
 </div>
 </body>
 </html>
