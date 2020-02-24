@@ -5,7 +5,7 @@ function captcha_verify(){
         echo 'Captcha is required';
     }
     else{
-        $secret_key = '6LcKktsUAAAAAFJ3zy-s7wuZ8WYUlcshLtqfYBsR';
+        $secret_key = 'x';
 
         $response = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret_key.'&response='.$_POST['g-recaptcha-response']);
 
